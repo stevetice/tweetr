@@ -26,7 +26,9 @@ main {
   background-color: white;
   margin: 0 auto;
   padding: 2em 2em;
-  width: 450px;
+  max-width: 450px;
+  position: relative;
+  top: 80px;
 }
 
 

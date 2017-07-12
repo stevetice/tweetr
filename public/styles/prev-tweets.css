@@ -1,3 +1,6 @@
+article {
+  margin: 1em 0;
+}
 
 .old-tweets .tweet {
   opacity: 0.75;
@@ -12,28 +15,50 @@
 }
 
 .old-tweets {
-  height: 200px;
   margin-top: 1em;
 }
 
-.old-tweets .user-icon {
-  background-color: red;
-  border-radius: 10px;
-  margin-right: 0.75em;
-  width: 60px;
+
+
+/*Header Elements*/
+
+.old-tweets header {
+  background-color: #e4e4e4;
+  border: 1px solid #cccccc;
+  border-bottom: 0;
+  border-radius: 10px 10px 0px 0px;
+  /*display: flex;*/
+  font-size: 1em;
+  padding: 0.5em;
 }
 
-.user-icon img {
+.old-tweets .avatar {
+  display: inline-block;
+  margin-right: 0.75em;
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.avatar img {
+  border: 1px solid #cccccc;
+  border-radius: 10px;
   width:100%;
 }
 
-.user-name {
-  align-self: flex-start;
+.username {
+  /*align-self: flex-start;*/
+  display: inline-block;
+  vertical-align: top;
 }
 
-.user-handle {
+.handle {
+  display: inline-block;
+  float: right;
   margin-left: auto;
 }
+
+
+/*Tweet Body*/
 
 .tweet-body {
   padding: 0.5em;
@@ -42,20 +67,12 @@
 }
 
 
-.old-tweets header {
-  background-color: #e4e4e4;
-  border: 1px solid #cccccc;
-  border-bottom: 0;
-  border-radius: 10px 10px 0px 0px;
-  display: flex;
-  font-size: 1em;
-  padding: 0.5em;
-}
-
 /*.old-tweets h2 {
   margin: 0;
 }*/
 
+
+/*Footer Elements*/
 
 .old-tweets footer {
   border: 1px solid #cccccc;
@@ -78,7 +95,7 @@
   opacity: 1;
 }
 
-.old-tweets .date {
+.old-tweets .timestamp {
   color: #a2a2a2;
   float: left;
   font-size: 1em;

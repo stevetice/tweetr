@@ -1,12 +1,19 @@
-
-
 #nav-bar {
-    background-color: #00a087;
+  background-color: #00a087;
+  color: #e8fdff;
+  top: 0;
+  height: 80px;
+  padding: 0 2em;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
 
-    height: 80px;
-    padding: 0 2em;
-    /*position: fixed;*/
-    width: 100%;
+#nav-bar .header {
+  float: left;
+  font-size: 2em;
+  padding-left: 10px;
+  line-height: 80px;
 }
 
 #nav-bar .logo {
@@ -14,12 +21,3 @@
   height: 80px;
   width: 80px;
 }
-
-#nav-bar .header {
-  color: #e8fdff;
-  float: left;
-  font-size: 2em;
-  padding-left: 10px;
-  line-height: 80px;
-}
-

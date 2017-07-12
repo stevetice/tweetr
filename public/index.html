@@ -42,7 +42,7 @@
     <!-- New tweet input -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form id="tweet-form" action="/tweets" method="POST">
           <textarea class="tweet-input" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -52,15 +52,15 @@
 
       <!--Previous tweets-->
       <section class="old-tweets">
-        <article class="tweet">
+        <!-- <article class="tweet">
           <header>
-            <div class="user-icon">
+            <div class="avatar">
               <img src="images/bird.png">
             </div>
-            <div class="user-name">
+            <div class="username">
               <h2>User Name</h2>
             </div>
-            <div class="user-handle">
+            <div class="handle">
               <span>@user-handle</span>
             </div>
           </header>
@@ -68,14 +68,15 @@
             <p>Previous tweets appear here! Previous tweets appear here! Previous tweets appear here! Previous tweets appear here! Previous tweets appear here! Previous tweets appear here!</p>
           </div>
           <footer>
-            <span class="date"> days ago </span>
+            <span class="timestamp"> days ago </span>
             <span class="icons">
               <i class="fa fa-flag" aria-hidden="true"></i>
               <i class="fa fa-retweet" aria-hidden="true"></i>
               <i class="fa fa-heart" aria-hidden="true"></i>
             </span>
           </footer>
-        </article>
+        </article> -->
+
       </section>
 
     </main>
