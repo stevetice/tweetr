@@ -11,7 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
 
     <!-- App CSS -->
+    <script src="https://use.fontawesome.com/53a41c7c84.js"></script>
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/prev-tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="vendor/jquery-2.2.3.min.js"></script>
@@ -30,20 +34,50 @@
     <nav id="nav-bar">
       <img class="logo" src="images/bird.png">
       <span class="header">Tweeter....</span>
-      <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+    <!-- New tweet input -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <textarea class="tweet-input" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
-          <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
         </form>
       </section>
+
+
+      <!--Previous tweets-->
+      <section class="old-tweets">
+        <article class="tweet">
+          <header>
+            <div class="user-icon">
+              <img src="images/bird.png">
+            </div>
+            <div class="user-name">
+              <h2>User Name</h2>
+            </div>
+            <div class="user-handle">
+              <span>@user-handle</span>
+            </div>
+          </header>
+          <div class="tweet-body">
+            <p>Previous tweets appear here! Previous tweets appear here! Previous tweets appear here! Previous tweets appear here! Previous tweets appear here! Previous tweets appear here!</p>
+          </div>
+          <footer>
+            <span class="date"> days ago </span>
+            <span class="icons">
+              <i class="fa fa-flag" aria-hidden="true"></i>
+              <i class="fa fa-retweet" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </span>
+          </footer>
+        </article>
+      </section>
+
     </main>
 
   </body>
