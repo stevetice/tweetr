@@ -8,7 +8,10 @@
 $(document).ready(function() {
 
   // button function
-
+  $('.compose').on('click', function(event) {
+    $('.new-tweet').slideToggle("slow");
+    $('.tweet-input').focus();
+  });
 
 
 
@@ -32,6 +35,8 @@ $(document).ready(function() {
               $('.old-tweets').empty();
               // Clear tweet input box
               $('.tweet-input').val('');
+              // Reset character counter
+              // $('.counter').val(140);
               // Re-load tweets including submitted tweet
               loadTweets();
           }
