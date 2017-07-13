@@ -3,59 +3,13 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
- let tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-]
+
 
 $(document).ready(function() {
 
   $("#tweet-form").on("submit", function(event) {
       event.preventDefault();
       // create and condition? if less than 140 and greater than 0 chars
-      // debugger
       let tweetText = $(this).find('.tweet-input').val()
       if (tweetText.length < 140) {
         let data = $(this).serialize();
@@ -63,9 +17,14 @@ $(document).ready(function() {
            type: "POST",
            url: '/tweets',
            data: data, // serializes the form's elements.
-           success: function(data)
-           {
-               alert(tweetText); // show response from the php script.
+           success: function(data) {
+               // Empty the tweet container
+               $('.old-tweets').empty();
+               // Clear tweet input box
+               $('.tweet-input').val('');
+               // Re-load tweets including submitted tweet
+               loadTweets();
+               // alert(tweetText); // show response from the php script.
            }
          });
 
@@ -76,11 +35,19 @@ $(document).ready(function() {
         // }
   })
 
+  function loadTweets(){
+    $.ajax({
+      type: "GET",
+      url: '/tweets',
+      success: function (tweets) {
+        renderTweets(tweets);
+      }
+    })
+  }
 
+  loadTweets();
 
-
-
-  renderTweets(tweetData);
+  // renderTweets(tweetData);
   });
 
   // Loops through tweets in tweetData to render previous tweets
@@ -88,7 +55,7 @@ $(document).ready(function() {
     // loops through tweets
     let $tweetContainer = $('.old-tweets');
     console.log(tweets);
-    tweets.forEach(function(tweet) {
+    tweets.reverse().forEach(function(tweet) {
       let $tweet = createTweetElement(tweet);
       $tweetContainer.append($tweet);
     });
