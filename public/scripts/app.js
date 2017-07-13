@@ -7,32 +7,36 @@
 
 $(document).ready(function() {
 
+  // button function
+
+
+
+
+
+  // Post tweet to stream
   $("#tweet-form").on("submit", function(event) {
       event.preventDefault();
-      // create and condition? if less than 140 and greater than 0 chars
       let tweetText = $(this).find('.tweet-input').val()
-      if (tweetText.length < 140) {
+      if (tweetText.length > 140) {
+        alert("Your tweet is too long! Please ensure it is no longer than 140 characters.");
+      } else if (tweetText === '') {
+        alert("Please write something before submitting your tweet.");
+      } else {
         let data = $(this).serialize();
         $.ajax({
-           type: "POST",
-           url: '/tweets',
-           data: data, // serializes the form's elements.
-           success: function(data) {
-               // Empty the tweet container
-               $('.old-tweets').empty();
-               // Clear tweet input box
-               $('.tweet-input').val('');
-               // Re-load tweets including submitted tweet
-               loadTweets();
-               // alert(tweetText); // show response from the php script.
-           }
-         });
-
-        }
-
-        // else {
-        //   alert(`Tweet length must be between 0 and 140 characters`)
-        // }
+          type: "POST",
+          url: '/tweets',
+          data: data,
+          success: function(data) {
+              // Empty the tweet container
+              $('.old-tweets').empty();
+              // Clear tweet input box
+              $('.tweet-input').val('');
+              // Re-load tweets including submitted tweet
+              loadTweets();
+          }
+        });
+      }
   })
 
   function loadTweets(){
@@ -50,6 +54,7 @@ $(document).ready(function() {
   // renderTweets(tweetData);
   });
 
+
   // Loops through tweets in tweetData to render previous tweets
   function renderTweets(tweets) {
     // loops through tweets
@@ -59,14 +64,7 @@ $(document).ready(function() {
       let $tweet = createTweetElement(tweet);
       $tweetContainer.append($tweet);
     });
-
-      // calls createTweetElement for each tweet
-      // takes return value and appends it to the tweets container
-
-    // For each (tweet){
-      // let tweet = createTweetElement
-
-    }
+  }
 
 
   // Function creates each element of tweet
@@ -127,5 +125,4 @@ $(document).ready(function() {
       $tweet.append($header).append($body).append($footer);
 
       return $tweet;
-
   }
