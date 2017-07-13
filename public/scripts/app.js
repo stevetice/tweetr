@@ -97,6 +97,7 @@ $(document).ready(function() {
 
 
     // FOOTER
+
     let $footer = $('<footer>')
 
     let $timestamp = $('<span class="timestamp">')

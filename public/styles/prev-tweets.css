@@ -61,9 +61,10 @@ article {
 /*Tweet Body*/
 
 .tweet-body {
-  padding: 0.5em;
   border-left: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
+  overflow-wrap: break-word;
+  padding: 0.5em;
 }
 
 
