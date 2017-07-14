@@ -9,6 +9,25 @@
   z-index: 1;
 }
 
+#nav-bar .compose {
+  border-width: 5px;
+  border-radius: 5px;
+  float: right;
+  height: 50px;
+  margin-top: 15px;
+  opacity: 1;
+  /*width: 100px;*/
+}
+
+#nav-bar .compose:hover {
+  opacity: 0.75;
+  /*z-index: 2;*/
+}
+
+.fa-pencil {
+  margin-right: 4px;
+}
+
 #nav-bar .header {
   float: left;
   font-size: 2em;
@@ -20,25 +39,4 @@
   float: left;
   height: 80px;
   width: 80px;
-}
-
-#nav-bar .compose {
-
-  border-radius: 5px;
-  float: right;
-  height: 50px;
-  margin-top: 15px;
-  opacity: 1;
-  width: 80px;
-}
-
-#nav-bar .compose:hover {
-
-  border-radius: 5px;
-  float: right;
-  height: 50px;
-  margin-top: 15px;
-  opacity: 0.75;
-  width: 80px
-  z-index: 2;
 }

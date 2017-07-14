@@ -6,6 +6,10 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="vendor/jquery.flash.css" type="text/css" />
+
+
+
 
     <!-- Use external font: Roboto Condensed -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
@@ -16,10 +20,12 @@
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="styles/prev-tweets.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- External JS -->
     <script type="text/javascript" src="vendor/jquery-2.2.3.min.js"></script>
-    <script type=“text/javascript” src=“https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js“></script>
+    <script type="text/javascript" src="vendor/jquery.flash.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 
 
 
@@ -36,8 +42,8 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="images/bird.png">
-      <span class="header">Tweeter....</span>
-      <button class="compose">Compose</button>
+      <span class="header">Tweeter...</span>
+      <button class="compose"><i class="fa fa-pencil" aria-hidden="true"></i>Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -56,6 +62,7 @@
 
       <!--Previous tweets-->
       <section class="old-tweets">
+
         <!-- <article class="tweet">
           <header>
             <div class="avatar">

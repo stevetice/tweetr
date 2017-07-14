@@ -21,7 +21,6 @@ body {
   background-color: #eee;
 }
 
-
 main {
   background-color: white;
   margin: 0 auto;
@@ -30,8 +29,6 @@ main {
   position: relative;
   top: 80px;
 }
-
-
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

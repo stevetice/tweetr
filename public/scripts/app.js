@@ -4,17 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 $(document).ready(function() {
 
   // button function
   $('.compose').on('click', function(event) {
     $('.new-tweet').slideToggle("slow");
     $('.tweet-input').focus();
+    $(document).scrollTop(0);
   });
-
-
-
 
 
   // Post tweet to stream
@@ -22,9 +19,9 @@ $(document).ready(function() {
       event.preventDefault();
       let tweetText = $(this).find('.tweet-input').val()
       if (tweetText.length > 140) {
-        alert("Your tweet is too long! Please ensure it is no longer than 140 characters.");
+        $.flash('Your tweet is too long! Please make sure it is less than 140 characters.');
       } else if (tweetText === '') {
-        alert("Please write something before submitting your tweet.");
+        $.flash('Try writing something before pressing tweet :) ')
       } else {
         let data = $(this).serialize();
         $.ajax({
@@ -57,7 +54,6 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // renderTweets(tweetData);
   });
 
 
@@ -65,7 +61,6 @@ $(document).ready(function() {
   function renderTweets(tweets) {
     // loops through tweets
     let $tweetContainer = $('.old-tweets');
-    // console.log(tweets);
     tweets.reverse().forEach(function(tweet) {
       let $tweet = createTweetElement(tweet);
       $tweetContainer.append($tweet);
@@ -103,11 +98,11 @@ $(document).ready(function() {
 
 
     // FOOTER
-
     let $footer = $('<footer>')
 
+    let $timeago = tweet.created_at
     let $timestamp = $('<span class="timestamp">')
-      .append($('<span>').text(new Date(tweet.created_at)))
+      .append($('<span>').text(moment($timeago).fromNow()))
       $footer.append($timestamp);
 
     let $icons = $('<span class="icons">')
@@ -123,11 +118,10 @@ $(document).ready(function() {
       }))
       .append($('<i>')
         .attr({
-        class:"fa fa-heart",
+        class:"fa fa-thumbs-up",
         "aria-hidden":"true"
       }));
       $footer.append($icons);
-
 
       $tweet.append($header).append($body).append($footer);
 

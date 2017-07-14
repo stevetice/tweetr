@@ -1,26 +1,44 @@
-article {
-  margin: 1em 0;
+.avatar img {
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  width:100%;
 }
 
-.old-tweets .tweet {
-  opacity: 0.75;
+.handle {
+  display: inline-block;
+  float: right;
+  margin-left: auto;
 }
 
-.old-tweets .tweet:hover {
-  opacity: 1.0
+/*Flag-Retweet-Like icons*/
+.icons {
+  float: right;
+  line-height: 2em;
+  rcpadding-right: 8px;
+  visibility: hidden;
 }
 
-.old-tweets:hover .icons {
-  opacity: 1;
+.icons i {
+  margin-right: 10px;
 }
 
-.old-tweets {
-  margin-top: 1em;
+.old-tweets .avatar {
+  display: inline-block;
+  margin-right: 0.75em;
+  max-height: 50px;
+  max-width: 50px;
 }
 
+.old-tweets footer {
+  border: 1px solid #cccccc;
+  border-radius: 0px 0px 10px 10px;
+  height: 2em;
+}
 
-
-/*Header Elements*/
+/*Section containing all previous tweets*/
+.old-tweets h2 {
+  margin: 0;
+}
 
 .old-tweets header {
   background-color: #e4e4e4;
@@ -32,33 +50,19 @@ article {
   padding: 0.5em;
 }
 
-.old-tweets .avatar {
-  display: inline-block;
-  margin-right: 0.75em;
-  max-height: 50px;
-  max-width: 50px;
+.old-tweets .timestamp {
+  color: #a2a2a2;
+  float: left;
+  font-size: 1em;
+  font-style: italic;
+  line-height: 2em;
+  padding-left: 0.5em;
 }
 
-.avatar img {
-  border: 1px solid #cccccc;
-  border-radius: 10px;
-  width:100%;
+.tweet {
+  margin-top: 1em;
+  opacity: 0.5;
 }
-
-.username {
-  /*align-self: flex-start;*/
-  display: inline-block;
-  vertical-align: top;
-}
-
-.handle {
-  display: inline-block;
-  float: right;
-  margin-left: auto;
-}
-
-
-/*Tweet Body*/
 
 .tweet-body {
   border-left: 1px solid #cccccc;
@@ -67,40 +71,15 @@ article {
   padding: 0.5em;
 }
 
-
-/*.old-tweets h2 {
-  margin: 0;
-}*/
-
-
-/*Footer Elements*/
-
-.old-tweets footer {
-  border: 1px solid #cccccc;
-  border-radius: 0px 0px 10px 10px;
-  /*border-top: 1px solid #cccccc;*/
-  height: 2em;
+.tweet:hover {
+  opacity: 1.0
 }
 
-.old-tweets .icons {
-  float: right;
-  line-height: 2em;
-  padding-right: 0.5em;
-  opacity: 0;
+.tweet:hover > footer .icons {
+  visibility: visible;
 }
 
-.old-tweets .icons:hover {
-  float: right;
-  line-height: 2em;
-  padding-right: 0.5em;
-  opacity: 1;
-}
-
-.old-tweets .timestamp {
-  color: #a2a2a2;
-  float: left;
-  font-size: 1em;
-  font-style: italic;
-  line-height: 2em;
-  padding-left: 0.5em;
+.username {
+  display: inline-block;
+  vertical-align: top;
 }
