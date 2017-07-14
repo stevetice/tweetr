@@ -16,6 +16,7 @@ $(document).ready(function() {
 
 
 
+
   // Post tweet to stream
   $("#tweet-form").on("submit", function(event) {
       event.preventDefault();
@@ -36,7 +37,7 @@ $(document).ready(function() {
               // Clear tweet input box
               $('.tweet-input').val('');
               // Reset character counter
-              // $('.counter').val(140);
+              $('.counter').text("140");
               // Re-load tweets including submitted tweet
               loadTweets();
           }
@@ -64,7 +65,7 @@ $(document).ready(function() {
   function renderTweets(tweets) {
     // loops through tweets
     let $tweetContainer = $('.old-tweets');
-    console.log(tweets);
+    // console.log(tweets);
     tweets.reverse().forEach(function(tweet) {
       let $tweet = createTweetElement(tweet);
       $tweetContainer.append($tweet);
