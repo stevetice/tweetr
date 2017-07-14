@@ -16,12 +16,10 @@
   height: 50px;
   margin-top: 15px;
   opacity: 1;
-  /*width: 100px;*/
 }
 
 #nav-bar .compose:hover {
   opacity: 0.75;
-  /*z-index: 2;*/
 }
 
 .fa-pencil {
